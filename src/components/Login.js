@@ -20,13 +20,13 @@ function Login({ onLogin }) {
   }
 
   return (
-    <div className="login">
-      <h2 className="login__title">Вход</h2>
-      <form onSubmit={handleSubmit} className="login__form">
+    <div className="register">
+      <h2 className="register__title">Вход</h2>
+      <form onSubmit={handleSubmit} className="register__form">
         <input
           value={credentials.email}
           onChange={handleChange}
-          className="login__input"
+          className="register__input"
           type="email"
           placeholder="Email"
           name="email"
@@ -36,14 +36,14 @@ function Login({ onLogin }) {
         <input
           value={credentials.password}
           onChange={handleChange}
-          className="login__input"
+          className="register__input"
           type="password"
           placeholder="Пароль"
           name="password"
           id="password"
           required
         />
-        <button className="login__button" type="submit">
+        <button className="register__button" type="submit">
           Войти
         </button>
       </form>
