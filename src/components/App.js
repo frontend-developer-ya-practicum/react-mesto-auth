@@ -33,7 +33,7 @@ function App() {
   const history = useHistory();
   const [loggedIn, setLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
-  const [isRegistrationSuccess, setIsRegistrationSuccess] = useState(false);
+  const [isAuthSuccess, setIsAuthSuccess] = useState(false);
 
   useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()])
@@ -158,14 +158,14 @@ function App() {
     auth
       .register({ email, password })
       .then((data) => {
-        setIsRegistrationSuccess(true);
+        setIsAuthSuccess(true);
         setIsInfoTooltipPopupOpen(true);
         history.push("/sign-in");
       })
       .catch((err) => {
         console.log(err);
 
-        setIsRegistrationSuccess(false);
+        setIsAuthSuccess(false);
         setIsInfoTooltipPopupOpen(true);
       });
   }
@@ -184,6 +184,8 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        setIsAuthSuccess(false);
+        setIsInfoTooltipPopupOpen(true);
       });
   }
 
@@ -269,7 +271,7 @@ function App() {
 
       <InfoTooltip
         isOpen={isInfoTooltipPopupOpen}
-        isRegistrationSuccess={isRegistrationSuccess}
+        isAuthSuccess={isAuthSuccess}
         onClose={closeAllPopups}
       />
     </CurrentUserContext.Provider>

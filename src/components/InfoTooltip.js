@@ -1,12 +1,12 @@
 import successIcon from "../images/register-success.svg";
 import errorIcon from "../images/register-error.svg";
 
-function InfoTooltip({ isOpen, isRegistrationSuccess, onClose }) {
+function InfoTooltip({ isOpen, isAuthSuccess, onClose }) {
   const successMessage = "Вы успешно зарегистрировались!";
   const errorMessage = "Что-то пошло не так! Попробуйте ещё раз.";
 
-  const icon = isRegistrationSuccess ? successIcon : errorIcon;
-  const message = isRegistrationSuccess ? successMessage : errorMessage;
+  const icon = isAuthSuccess ? successIcon : errorIcon;
+  const message = isAuthSuccess ? successMessage : errorMessage;
 
   function handleClickOnOutside(e) {
     if (e.target === e.currentTarget) {
