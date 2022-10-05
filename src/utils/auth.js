@@ -7,7 +7,6 @@ class Auth {
   }
 
   register({ email, password }) {
-    console.log(AUTH_ROOT);
     return fetch(this._baseUrl + "/signup", {
       method: "POST",
       headers: this._headers,
