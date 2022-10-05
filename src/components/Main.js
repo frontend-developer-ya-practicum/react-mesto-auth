@@ -18,7 +18,9 @@ function Main({
     <main className="content">
       <section className="profile">
         <div className="profile__avatar-container">
-          <img className="profile__avatar-image" src={currentUser.avatar} alt="Аватар" />
+          {currentUser.avatar && (
+            <img className="profile__avatar-image" src={currentUser.avatar} alt="Аватар" />
+          )}
           <button
             onClick={onEditAvatar}
             className="profile__edit-avatar"
