@@ -8,20 +8,18 @@ function InfoTooltip({ isOpen, isAuthSuccess, onClose }) {
   const icon = isAuthSuccess ? successIcon : errorIcon;
   const message = isAuthSuccess ? successMessage : errorMessage;
 
-  function handleClickOnOutside(e) {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  }
-
   return (
     <div
       className={`popup popup_type_tooltip ${isOpen && "popup_opened"}`}
-      onClick={handleClickOnOutside}
+      onClick={() => {
+        onClose();
+      }}
     >
       <div className="popup__icon-container">
         <button
-          onClick={onClose}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
           className="popup__close"
           type="button"
           aria-label="Закрыть окно"
