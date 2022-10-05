@@ -154,6 +154,7 @@ function App() {
   }
 
   function handleSignUp({ email, password }) {
+    setIsSubmitting(true);
     auth
       .register({ email, password })
       .then((data) => {
@@ -170,6 +171,7 @@ function App() {
   }
 
   function handleSignIn({ email, password }) {
+    setIsSubmitting(true);
     auth
       .authorize({ email, password })
       .then((data) => {
@@ -212,11 +214,21 @@ function App() {
         />
 
         <Route path="/sign-in">
-          <Login onLogin={handleSignIn} />
+          <Login
+            onLogin={handleSignIn}
+            isSubmitting={isSubmitting}
+            buttonTextOnSubmit="Авторизация..."
+            buttonText="Войти"
+          />
         </Route>
 
         <Route path="/sign-up">
-          <Register onRegister={handleSignUp} />
+          <Register
+            onRegister={handleSignUp}
+            isSubmitting={isSubmitting}
+            buttonTextOnSubmit="Регистрация..."
+            buttonText="Зарегистрироваться"
+          />
         </Route>
 
         <Route>{loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}</Route>

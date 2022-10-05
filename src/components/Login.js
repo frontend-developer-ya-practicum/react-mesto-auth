@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Login({ onLogin }) {
+function Login({ onLogin, isSubmitting, buttonTextOnSubmit, buttonText }) {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
@@ -44,7 +44,7 @@ function Login({ onLogin }) {
           required
         />
         <button className="register__button" type="submit">
-          Войти
+          {isSubmitting ? buttonTextOnSubmit : buttonText}
         </button>
       </form>
     </div>

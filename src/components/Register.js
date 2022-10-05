@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Register({ onRegister }) {
+function Register({ onRegister, isSubmitting, buttonTextOnSubmit, buttonText }) {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
@@ -45,7 +45,7 @@ function Register({ onRegister }) {
           required
         />
         <button className="register__button" type="submit">
-          Зарегистрироваться
+          {isSubmitting ? buttonTextOnSubmit : buttonText}
         </button>
       </form>
       <div className="register__sign-in">
