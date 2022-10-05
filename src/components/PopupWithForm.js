@@ -44,7 +44,7 @@ function PopupWithForm({
           className="popup__close"
           type="button"
           aria-label="Закрыть окно"
-        ></button>
+        />
         <form onSubmit={onSubmit} className="popup__form" name={`${name}-form`} noValidate>
           <h2 className="popup__form-title">{title}</h2>
           {children}

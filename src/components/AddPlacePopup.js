@@ -52,7 +52,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace, isSubmitting }) {
           minLength="2"
           maxLength="30"
         />
-        <span className="popup__input-error card-name-input-error"></span>
+        <span className="popup__input-error card-name-input-error" />
         <input
           value={link || ""}
           onChange={handleChangeLink}
@@ -63,7 +63,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace, isSubmitting }) {
           placeholder="Ссылка на картинку"
           required
         />
-        <span className="popup__input-error card-link-input-error"></span>
+        <span className="popup__input-error card-link-input-error" />
       </fieldset>
     </PopupWithForm>
   );

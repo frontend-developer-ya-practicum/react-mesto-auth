@@ -250,7 +250,7 @@ function App() {
         onClose={closeAllPopups}
         onAddPlace={handleAddPlaceSubmit}
         isSubmitting={isSubmitting}
-      ></AddPlacePopup>
+      />
 
       <EditAvatarPopup
         isOpen={isEditAvatarPopupOpen}

@@ -25,7 +25,7 @@ function InfoTooltip({ isOpen, isAuthSuccess, onClose }) {
           className="popup__close"
           type="button"
           aria-label="Закрыть окно"
-        ></button>
+        />
         <img className="popup__icon" src={icon} alt={message} />
         <p className="popup__icon-caption">{message}</p>
       </div>

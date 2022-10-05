@@ -24,7 +24,7 @@ function Main({
             className="profile__edit-avatar"
             type="button"
             aria-label="Редактировать аватар"
-          ></button>
+          />
         </div>
 
         <div className="profile__info">
@@ -35,7 +35,7 @@ function Main({
               className="profile__edit-button"
               type="button"
               aria-label="Редактировать профиль"
-            ></button>
+            />
           </div>
           <p className="profile__about">{currentUser.about}</p>
         </div>
@@ -45,7 +45,7 @@ function Main({
           className="profile__add-button"
           type="button"
           aria-label="Добавить фото"
-        ></button>
+        />
       </section>
 
       <section className="cards">
